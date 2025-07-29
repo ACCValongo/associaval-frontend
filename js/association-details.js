@@ -1,5 +1,5 @@
 // Configuração da API para página de detalhes da associação
-const API_BASE_URL = 'https://5000-irhtdqep1do4ksvppqd8n-dd28b3f7.manusvm.computer';
+const API_BASE_URL = 'https://associaval-backend.onrender.com';
 
 // Função para fazer requisições à API
 async function apiRequest(endpoint, options = {}) {

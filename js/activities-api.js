@@ -1,5 +1,5 @@
 // API para gestão de atividades
-const API_BASE_URL = 'https://5001-iibluzegtixcu6t4wqo26-626fa5e7.manusvm.computer';
+const API_BASE_URL = 'https://associaval-backend.onrender.com';
 
 // Função para fazer requisições à API
 async function fetchAPI(endpoint) {

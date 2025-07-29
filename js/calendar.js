@@ -18,7 +18,7 @@ function initCalendar() {
     // Carregar eventos do backend
     async function loadEvents() {
         try {
-            const API_BASE_URL = 'https://5001-iibluzegtixcu6t4wqo26-626fa5e7.manusvm.computer';
+            const API_BASE_URL = 'https://associaval-backend.onrender.com';
             const response = await fetch(`${API_BASE_URL}/api/activities`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
