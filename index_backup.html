@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AssociaVal - Portal das Associações do Concelho de Valongo. Descubra atividades e eventos das colectividades locais.">
+    <meta name="keywords" content="Valongo, associações, atividades, eventos, ACCV, colectividades">
+    <title>AssociaVal - Portal das Associações de Valongo</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AssociaVal - Portal das Associações de Valongo">
+    <meta property="og:description" content="Descubra atividades e eventos das associações do Concelho de Valongo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://associaval.pt">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo-associaval.svg" alt="AssociaVal" class="logo-img">
+                        <span class="logo-text">AssociaVal</span>
+                    </a>
+                </div>
+                
+                <div class="navbar-search">
+                    <form class="search-form" role="search">
+                        <label for="search-input" class="sr-only">Pesquisar atividades e associações</label>
+                        <input 
+                            type="search" 
+                            id="search-input"
+                            class="search-input" 
+                            placeholder="Pesquisar atividades, associações..."
+                            aria-label="Pesquisar atividades e associações"
+                        >
+                        <button type="submit" class="search-btn" aria-label="Pesquisar">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="navbar-menu">
+                    <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                    </button>
+                    
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link active">Início</a></li>
+                        <li><a href="pages/atividades.html" class="nav-link">Atividades</a></li>
+                        <li><a href="pages/associacoes.html" class="nav-link">Associações</a></li>
+                        <li><a href="pages/documentos.html" class="nav-link">Documentos</a></li>
+                        <li><a href="pages/sobre.html" class="nav-link">Sobre</a></li>
+                        <li><a href="https://5000-iiqiqf5qkhmfgw4t1fv3h-6d9e8aff.manusvm.computer/login" class="nav-link btn btn-sm btn-primary">Login Associações</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Bem-vindos ao AssociaVal</h1>
+                    <p class="hero-subtitle">
+                        Descubra as atividades e eventos das associações do Concelho de Valongo. 
+                        Um espaço de encontro entre a comunidade e as suas colectividades.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="pages/atividades.html" class="btn btn-primary">Ver Atividades</a>
+                        <a href="#associacoes-destaque" class="btn btn-outline">Conhecer Associações</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Associações em Destaque -->
+        <section id="associacoes-destaque" class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Associações em Destaque</h2>
+                <p class="section-subtitle text-center">
+                    Conheça algumas das associações mais ativas do nosso concelho
+                </p>
+                
+                <div class="cards-grid" id="associacoes-cards">
+                    <!-- As associações serão carregadas dinamicamente via JavaScript -->
+                    <div class="loading-message">
+                        <p>A carregar associações...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atividades em Destaque -->
+        <section id="atividades-destaque" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title text-center">Atividades em Destaque</h2>
+                <p class="section-subtitle text-center">
+                    Próximos eventos e atividades das nossas associações
+                </p>
+                
+                <div class="cards-grid" id="atividades-cards">
+                    <!-- As atividades serão carregadas dinamicamente via JavaScript -->
+                    <div class="loading-message">
+                        <p>A carregar atividades...</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-xl">
+                    <a href="pages/atividades.html" class="btn btn-secondary">Ver Todas as Atividades</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendário -->
+        <section id="calendario" class="section">
+            <div class="container">
+                <h2 class="section-title text-center">Calendário de Atividades</h2>
+                <p class="section-subtitle text-center">
+                    Consulte as datas dos próximos eventos
+                </p>
+                
+                <div class="calendar-container" id="calendar-container">
+                    <!-- O calendário será carregado dinamicamente via JavaScript -->
+                    <div class="loading-message">
+                        <p>A carregar calendário...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+                    </div>
+                </div>
+                
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-color legend-music"></span>
+                        <span class="legend-text">Música</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color legend-sport"></span>
+                        <span class="legend-text">Desporto</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color legend-theater"></span>
+                        <span class="legend-text">Teatro</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color legend-culture"></span>
+                        <span class="legend-text">Cultura</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AssociaVal</h4>
+                    <p class="footer-text">
+                        Portal oficial das associações do Concelho de Valongo, 
+                        desenvolvido pela ACCV para promover a vida associativa local.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/atividades.html">Atividades</a></li>
+                        <li><a href="#associacoes">Associações</a></li>
+                        <li><a href="pages/documentos.html">Documentos</a></li>
+                        <li><a href="pages/sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contactos ACCV</h4>
+                    <div class="footer-contact">
+                        <p>📧 geral@accv.pt</p>
+                        <p>📞 224 211 445</p>
+                        <p>📍 Valongo, Portugal</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Freguesias</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/atividades.html?freguesia=alfena">Alfena</a></li>
+                        <li><a href="pages/atividades.html?freguesia=valongo">Valongo</a></li>
+                        <li><a href="pages/atividades.html?freguesia=ermesinde">Ermesinde</a></li>
+                        <li><a href="pages/atividades.html?freguesia=campo">Campo</a></li>
+                        <li><a href="pages/atividades.html?freguesia=sobrado">Sobrado</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACCV - Associação das Colectividades do Concelho de Valongo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/api-integration.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Associação - AssociaVal</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo-associaval.svg" alt="AssociaVal Logo">
+                    <a href="../index.html" class="logo-text">AssociaVal</a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar atividades, associações..." class="search-input">
+                    <button class="search-btn" aria-label="Pesquisar">🔍</button>
+                </div>
+                
+                <nav class="nav">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="atividades.html" class="nav-link">Atividades</a>
+                    <a href="associacoes.html" class="nav-link">Associações</a>
+                    <a href="documentos.html" class="nav-link">Documentos</a>
+                    <a href="sobre.html" class="nav-link">Sobre</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="../index.html">Início</a> > 
+                <a href="associacoes.html">Associações</a> > 
+                <span id="association-name-breadcrumb">Carregando...</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Detalhes da Associação -->
+    <section class="association-details">
+        <div class="container">
+            <div id="association-content">
+                <div class="loading">Carregando detalhes da associação...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atividades da Associação -->
+    <section class="association-activities">
+        <div class="container">
+            <h2 class="section-title">Atividades da Associação</h2>
+            <div id="activities-content">
+                <div class="loading">Carregando atividades...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AssociaVal</h3>
+                    <p>Portal das Associações do Concelho de Valongo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="atividades.html">Atividades</a></li>
+                        <li><a href="associacoes.html">Associações</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: accvalongo@gmail.com</p>
+                    <p>Telefone: 224 211 190</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/association-details.js"></script>
+</body>
+</html>
+

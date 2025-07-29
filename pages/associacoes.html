@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associações - AssociaVal</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo-associaval.svg" alt="AssociaVal" class="logo-img">
+                        <span class="logo-text">AssociaVal</span>
+                    </a>
+                </div>
+                
+                <div class="navbar-search">
+                    <form class="search-form" role="search">
+                        <label for="search-input" class="sr-only">Pesquisar atividades e associações</label>
+                        <input 
+                            type="search" 
+                            id="search-input"
+                            class="search-input" 
+                            placeholder="Pesquisar atividades, associações..."
+                            aria-label="Pesquisar atividades e associações"
+                        >
+                        <button type="submit" class="search-btn" aria-label="Pesquisar">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="navbar-menu">
+                    <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                    </button>
+                    
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Início</a></li>
+                        <li><a href="atividades.html" class="nav-link">Atividades</a></li>
+                        <li><a href="associacoes.html" class="nav-link active">Associações</a></li>
+                        <li><a href="documentos.html" class="nav-link">Documentos</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                        <li><a href="https://5000-iiqiqf5qkhmfgw4t1fv3h-6d9e8aff.manusvm.computer/login" class="nav-link btn btn-sm btn-primary">Login Associações</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-secondary">
+        <div class="container">
+            <h1 class="hero-title">Associações</h1>
+            <p class="hero-subtitle">Conheça todas as associações do Concelho de Valongo</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <h2 class="section-title">Filtrar Associações</h2>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="filter-freguesia">Freguesia</label>
+                    <select id="filter-freguesia">
+                        <option value="todas">Todas as Freguesias</option>
+                        <option value="alfena">Alfena</option>
+                        <option value="valongo">Valongo</option>
+                        <option value="ermesinde">Ermesinde</option>
+                        <option value="campo">Campo</option>
+                        <option value="sobrado">Sobrado</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-tipo">Tipo de Atividade</label>
+                    <select id="filter-tipo">
+                        <option value="todas">Todos os Tipos</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="desporto">Desporto</option>
+                        <option value="educacao">Educação</option>
+                        <option value="social">Social</option>
+                        <option value="recreativo">Recreativo</option>
+                        <option value="religioso">Religioso</option>
+                    </select>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn btn-primary" onclick="applyFilters()">Aplicar Filtros</button>
+                    <button class="btn btn-outline" onclick="clearFilters()">Limpar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Associações -->
+    <section class="associations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Associações do Concelho</h2>
+                <p class="associations-count">Mostrando <span id="count">0</span> associações</p>
+            </div>
+            
+            <div class="associations-grid" id="associations-list">
+                <!-- As associações serão carregadas dinamicamente via JavaScript -->
+                <div class="loading">Carregando associações...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AssociaVal</h3>
+                    <p>Portal das Associações do Concelho de Valongo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="atividades.html">Atividades</a></li>
+                        <li><a href="associacoes.html">Associações</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: accvalongo@gmail.com</p>
+                    <p>Telefone: 224 211 190</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/associations-api.js"></script>
+</body>
+</html>
+

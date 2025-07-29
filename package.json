@@ -1,0 +1,14 @@
+{
+  "name": "associaval-frontend",
+  "version": "1.0.0",
+  "description": "Frontend para o sistema AssociaVal - Associação das Colectividades do Concelho de Valongo",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Frontend estático - sem build necessário'"
+  },
+  "keywords": ["associaval", "valongo", "associações", "atividades"],
+  "author": "Associação das Colectividades do Concelho de Valongo",
+  "license": "MIT"
+}
+

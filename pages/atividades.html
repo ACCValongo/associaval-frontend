@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atividades das associações do Concelho de Valongo. Descubra eventos de teatro, música, desporto e cultura.">
+    <meta name="keywords" content="atividades, eventos, Valongo, teatro, música, desporto, cultura">
+    <title>Atividades - AssociaVal</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo-associaval.svg" alt="AssociaVal" class="logo-img">
+                        <span class="logo-text">AssociaVal</span>
+                    </a>
+                </div>
+                
+                <div class="navbar-search">
+                    <form class="search-form" role="search">
+                        <label for="search-input" class="sr-only">Pesquisar atividades e associações</label>
+                        <input 
+                            type="search" 
+                            id="search-input"
+                            class="search-input" 
+                            placeholder="Pesquisar atividades..."
+                            aria-label="Pesquisar atividades"
+                        >
+                        <button type="submit" class="search-btn" aria-label="Pesquisar">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="navbar-menu">
+                    <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                        <span class="menu-icon"></span>
+                    </button>
+                    
+                    <ul class="nav-links">
+                        <li><a href="../index.html" class="nav-link">Início</a></li>
+                        <li><a href="atividades.html" class="nav-link active">Atividades</a></li>
+                        <li><a href="../index.html#associacoes" class="nav-link">Associações</a></li>
+                        <li><a href="documentos.html" class="nav-link">Documentos</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main">
+        <!-- Cabeçalho da página -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Atividades</h1>
+                <p class="page-subtitle">
+                    Descubra todas as atividades e eventos das associações do Concelho de Valongo
+                </p>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters-container">
+                    <h2 class="filters-title">Filtrar Atividades</h2>
+                    
+                    <div class="filters-grid">
+                        <!-- Filtro por Freguesia -->
+                        <div class="filter-group">
+                            <label for="filter-freguesia" class="filter-label">Freguesia</label>
+                            <select id="filter-freguesia" class="filter-select">
+                                <option value="">Todas as Freguesias</option>
+                                <option value="alfena">Alfena</option>
+                                <option value="valongo">Valongo</option>
+                                <option value="ermesinde">Ermesinde</option>
+                                <option value="campo">Campo</option>
+                                <option value="sobrado">Sobrado</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Filtro por Tipo de Atividade -->
+                        <div class="filter-group">
+                            <label for="filter-tipo" class="filter-label">Tipo de Atividade</label>
+                            <select id="filter-tipo" class="filter-select">
+                                <option value="">Todos os Tipos</option>
+                                <option value="teatro">Teatro</option>
+                                <option value="musica">Música</option>
+                                <option value="danca">Dança</option>
+                                <option value="canto">Canto</option>
+                                <option value="instrumento">Instrumento</option>
+                                <option value="coro">Coro</option>
+                                <option value="karate">Karaté</option>
+                                <option value="futebol">Futebol</option>
+                                <option value="judo">Judo</option>
+                                <option value="basquetebol">Basquetebol</option>
+                                <option value="rancho">Rancho Folclórico</option>
+                                <option value="universidade-senior">Universidade Sénior</option>
+                                <option value="cultura">Cultura</option>
+                                <option value="desporto">Desporto</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Filtro por Data -->
+                        <div class="filter-group">
+                            <label for="filter-data" class="filter-label">Período</label>
+                            <select id="filter-data" class="filter-select">
+                                <option value="">Todas as Datas</option>
+                                <option value="passadas">Atividades Passadas</option>
+                                <option value="futuras">Atividades Futuras</option>
+                                <option value="hoje">Hoje</option>
+                                <option value="semana">Esta Semana</option>
+                                <option value="mes">Este Mês</option>
+                                <option value="proximo-mes">Próximo Mês</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Botões de ação -->
+                        <div class="filter-actions">
+                            <button type="button" id="apply-filters" class="btn btn-primary">Aplicar Filtros</button>
+                            <button type="button" id="clear-filters" class="btn btn-outline">Limpar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Atividades -->
+        <section class="activities-section">
+            <div class="container">
+                <div class="activities-header">
+                    <h2 class="section-title">Próximas Atividades</h2>
+                    <div class="activities-count">
+                        <span id="activities-count">Mostrando 12 atividades</span>
+                    </div>
+                </div>
+                
+                <div class="activities-list" id="activities-list">
+                    <!-- Atividade 1 -->
+                    <article class="activity-item" data-freguesia="valongo" data-tipo="musica" data-data="2024-12-15">
+                        <div class="activity-date-badge">
+                            <span class="date-day">15</span>
+                            <span class="date-month">DEZ</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">Concerto de Natal</h3>
+                                <span class="activity-type music">Música</span>
+                            </div>
+                            <p class="activity-description">
+                                O Coro de Valongo apresenta um concerto especial de Natal com músicas tradicionais e contemporâneas. 
+                                Uma noite mágica para toda a família celebrar a época natalícia.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Auditório Municipal, Valongo
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        21:00
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Coro de Valongo
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Participar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Atividade 2 -->
+                    <article class="activity-item" data-freguesia="ermesinde" data-tipo="karate" data-data="2024-12-18">
+                        <div class="activity-date-badge">
+                            <span class="date-day">18</span>
+                            <span class="date-month">DEZ</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">Torneio Regional de Karaté</h3>
+                                <span class="activity-type sport">Desporto</span>
+                            </div>
+                            <p class="activity-description">
+                                Competição regional de karaté com participação de várias escolas do distrito. 
+                                Categorias para todas as idades e níveis de experiência.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Pavilhão de Ermesinde
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        14:00
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Clube de Karaté Ermesinde
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Inscrever-se</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Atividade 3 -->
+                    <article class="activity-item" data-freguesia="sobrado" data-tipo="teatro" data-data="2024-12-22">
+                        <div class="activity-date-badge">
+                            <span class="date-day">22</span>
+                            <span class="date-month">DEZ</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">O Auto da Barca do Inferno</h3>
+                                <span class="activity-type theater">Teatro</span>
+                            </div>
+                            <p class="activity-description">
+                                Representação da obra clássica de Gil Vicente pelo Grupo de Teatro de Sobrado. 
+                                Uma adaptação moderna que mantém a essência da obra original.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Centro Cultural de Sobrado
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        20:30
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Grupo de Teatro de Sobrado
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Reservar Bilhete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Atividade 4 -->
+                    <article class="activity-item" data-freguesia="campo" data-tipo="cultura" data-data="2024-12-28">
+                        <div class="activity-date-badge">
+                            <span class="date-day">28</span>
+                            <span class="date-month">DEZ</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">Baile de Fim de Ano</h3>
+                                <span class="activity-type culture">Cultura</span>
+                            </div>
+                            <p class="activity-description">
+                                Celebração de fim de ano com música ao vivo, animação e convívio para toda a família. 
+                                Uma noite especial para despedir 2024 em grande estilo.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Salão Paroquial de Campo
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        22:00
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Associação Cultural de Campo
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Participar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Atividade 5 -->
+                    <article class="activity-item" data-freguesia="alfena" data-tipo="universidade-senior" data-data="2025-01-05">
+                        <div class="activity-date-badge">
+                            <span class="date-day">05</span>
+                            <span class="date-month">JAN</span>
+                            <span class="date-year">2025</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">Aulas de Dança Sénior</h3>
+                                <span class="activity-type culture">Cultura</span>
+                            </div>
+                            <p class="activity-description">
+                                Início das aulas de dança para a população sénior. Atividade física adaptada que promove 
+                                o bem-estar e a socialização entre os participantes.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Universidade Sénior de Alfena
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        15:00
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Universidade Sénior de Alfena
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Inscrever-se</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Atividade 6 -->
+                    <article class="activity-item" data-freguesia="ermesinde" data-tipo="futebol" data-data="2025-01-12">
+                        <div class="activity-date-badge">
+                            <span class="date-day">12</span>
+                            <span class="date-month">JAN</span>
+                            <span class="date-year">2025</span>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <h3 class="activity-title">Jogo de Futebol - Veteranos</h3>
+                                <span class="activity-type sport">Desporto</span>
+                            </div>
+                            <p class="activity-description">
+                                Jogo amigável entre as equipas de veteranos de Ermesinde e Valongo. 
+                                Uma tarde de desporto e convívio entre amigos.
+                            </p>
+                            <div class="activity-details">
+                                <div class="activity-meta">
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Campo de Futebol de Ermesinde
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        15:30
+                                    </span>
+                                    <span class="meta-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        Clube Desportivo de Ermesinde
+                                    </span>
+                                </div>
+                                <div class="activity-actions">
+                                    <button class="btn btn-outline btn-sm">Mais Informações</button>
+                                    <button class="btn btn-primary btn-sm">Assistir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Paginação -->
+                <div class="pagination-container">
+                    <nav class="pagination" aria-label="Navegação de páginas">
+                        <button class="pagination-btn" disabled aria-label="Página anterior">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <span class="pagination-info">Página 1 de 3</span>
+                        <button class="pagination-btn" aria-label="Próxima página">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AssociaVal</h4>
+                    <p class="footer-text">
+                        Portal oficial das associações do Concelho de Valongo, 
+                        desenvolvido pela ACCV para promover a vida associativa local.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="atividades.html">Atividades</a></li>
+                        <li><a href="../index.html#associacoes">Associações</a></li>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contactos ACCV</h4>
+                    <div class="footer-contact">
+                        <p>📧 geral@accv.pt</p>
+                        <p>📞 224 211 445</p>
+                        <p>📍 Valongo, Portugal</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Freguesias</h4>
+                    <ul class="footer-links">
+                        <li><a href="atividades.html?freguesia=alfena">Alfena</a></li>
+                        <li><a href="atividades.html?freguesia=valongo">Valongo</a></li>
+                        <li><a href="atividades.html?freguesia=ermesinde">Ermesinde</a></li>
+                        <li><a href="atividades.html?freguesia=campo">Campo</a></li>
+                        <li><a href="atividades.html?freguesia=sobrado">Sobrado</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ACCV - Associação das Colectividades do Concelho de Valongo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/activities.js"></script>
+    <script src="../js/activities-api.js"></script>
+    <script src="../js/calendar.js"></script>
+</body>
+</html>
+
+
+        <!-- Calendário de Atividades -->
+        <section class="calendar-section">
+            <div class="container">
+                <div class="calendar-header">
+                    <h2 class="section-title">Calendário de Atividades</h2>
+                    <div class="calendar-navigation">
+                        <button id="prev-month" class="btn btn-outline btn-sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                            Mês Anterior
+                        </button>
+                        <h3 id="calendar-title" class="calendar-month-title">Julho 2025</h3>
+                        <button id="next-month" class="btn btn-outline btn-sm">
+                            Próximo Mês
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="calendar-container">
+                    <div id="calendar-grid" class="calendar-grid">
+                        <!-- O calendário será gerado dinamicamente pelo JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-color music"></span>
+                        <span class="legend-text">Música</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color theater"></span>
+                        <span class="legend-text">Teatro</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color sport"></span>
+                        <span class="legend-text">Desporto</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color culture"></span>
+                        <span class="legend-text">Cultura</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
